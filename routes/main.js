@@ -17,7 +17,11 @@ router.post('/changepassword', (req, res) => {
 });
 
 router.post('/trangchu', (req, res) => {
-    res.render('index');
+    res.render('pages/banhang.hbs', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/banhang', (req, res) => {
+    res.render('pages/banhang.hbs', {layout: 'layouts/main.hbs'});
 })
 
 module.exports = router;

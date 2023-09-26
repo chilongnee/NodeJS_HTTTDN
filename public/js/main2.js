@@ -101,3 +101,15 @@ logoutLink.addEventListener('click', function (event) {
     // Code to handle logout logic
     // ...
 });
+
+function setActive(event) {
+	// Remove the "active" class from all menu items
+	const menuItems = document.querySelectorAll('.main-menu li');
+	menuItems.forEach(function(item) {
+	  item.classList.remove('active');
+	});
+	
+	// Add the "active" class to the clicked menu item
+	const clickedItem = event.target.closest('li');
+	clickedItem.classList.add('active');
+  }

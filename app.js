@@ -15,7 +15,7 @@ app.use('fonts', express.static(path.join(__dirname, '/public/fonts')));
 app.use('scss', express.static(path.join(__dirname, '/public/scss')));
 
 app.set('view engine', 'hbs');
-
+app.set('views', path.join(__dirname, '/views'))
 // Register the header, footer partial
 
 

@@ -24,4 +24,8 @@ router.get('/banhang', (req, res) => {
     res.render('pages/banhang.hbs', {layout: 'layouts/main.hbs'});
 })
 
+router.get('/thongtinkhachhang', (req, res) => {
+    res.render('pages/thongtinkhachhang.hbs', {layout: 'layouts/main.hbs'})
+})
+
 module.exports = router;

@@ -30,8 +30,9 @@ app.use('/', require('./routes/main'));
 app.use('/login', require('./routes/main'));
 
 
-app.use('/changepasswoed', require('./routes/main'))
+app.use('/changepassword', require('./routes/main'))
 
+app.use('/thongtinkhachhang', require('./routes/main'))
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

@@ -13,6 +13,9 @@ app.use('img', express.static(path.join(__dirname, '/public/img')));
 app.use('js', express.static(path.join(__dirname, '/public/js')));
 app.use('fonts', express.static(path.join(__dirname, '/public/fonts')));
 app.use('scss', express.static(path.join(__dirname, '/public/scss')));
+app.use('sass', express.static(path.join(__dirname, '/public/sass')));
+app.use('plugins', express.static(path.join(__dirname, '/public/plugins')));
+
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/views'))

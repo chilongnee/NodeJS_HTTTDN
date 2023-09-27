@@ -38,7 +38,12 @@ app.use('/topselling', require('./routes/main'));
 
 app.use('/shortitem', require('./routes/main'));
 
-app.use('/improvements', require('./routes/main'))
+app.use('/improvements', require('./routes/main'));
+
+app.use('/retaildashboard', require('./routes/main'));
+
+app.use('/employeesmanage', require('./routes/main'));
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

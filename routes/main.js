@@ -36,4 +36,11 @@ router.get('/404', (req, res) => {
     res.render('pages/404.hbs', {layout: 'layouts/main.hbs'});
 })
 
+router.get('/retaildashboard', (req, res) => {
+    res.render('pages/retaildashboard', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/employeesmanage', (req, res) => {
+    res.render('pages/employeesmanage', {layout: 'layouts/main.hbs'});
+})
 module.exports = router;

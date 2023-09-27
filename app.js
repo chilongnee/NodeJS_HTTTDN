@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
 var fs = require('fs');
-const port = 8080;
+const port = 3000;
 const path = require('path');
 const { handlebars } = require('hbs');
 
@@ -30,9 +30,8 @@ app.use('/', require('./routes/main'));
 app.use('/login', require('./routes/main'));
 
 
-app.use('/changepassword', require('./routes/main'))
+app.use('/404', require('./routes/main'))
 
-app.use('/thongtinkhachhang', require('./routes/main'))
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

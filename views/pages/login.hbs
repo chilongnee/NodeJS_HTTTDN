@@ -1,82 +1,58 @@
-<!doctype html>
+<!-- 
+ RC-PoS (https://appzaib.com/rc-pos)
+ Copyright 2013-2018 BlackRock Digital, LLC, 2018 Vruqa Designs, 2018 Appzaib
+ Licensed under MIT (https://github.com/appzaib/rc-pos/blob/master/LICENSE)
+-->
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Đăng nhập</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>RC-POS - Login</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet">
   </head>
-  <body>
-  
-
-  
-  <div class="content">
-    <div class="container"> 
-      <div class="row">
-        <div class="col-md-6">
-          <img src="img/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
-        </div>
-        <div class="col-md-6 contents">
-          <div class="row justify-content-center">
-            <div class="col-md-8">
-              <div class="mb-4">
-              <h3>Đăng nhập</h3>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header bg-primary text-white">Login to your account</div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="text" id="username" class="form-control" placeholder="username" required="required" autofocus="autofocus">
+                <label for="username">Enter username</label>
+              </div>
             </div>
-            <form action="/changepassword" method="post">
-              <div class="form-group first">
-                <label for="username">Tên đăng nhập</label>
-                <input type="text" class="form-control" id="username">
-
+            <div class="form-group">
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <label for="inputPassword">Password</label>
               </div>
-              <div class="form-group last mb-4">
-                <label for="password">Mật khẩu</label>
-                <input type="password" class="form-control" id="password">
-                
-              </div>
-              
-
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
-
-              <span class="d-block text-left my-4 text-muted">&mdash; hoặc Đăng nhập với &mdash;</span>
-              
-              <div class="social-login">
-                <a href="#" class="facebook">
-                  <span class="icon-facebook mr-3"></span> 
-                </a>
-                <a href="#" class="twitter">
-                  <span class="icon-twitter mr-3"></span> 
-                </a>
-                <a href="#" class="google">
-                  <span class="icon-google mr-3"></span> 
-                </a>
-              </div>
-            </form>
             </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me">
+                  Remember Password
+                </label>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-block" href="/404">Login</a>
+          </form>
+          <div class="text-center">
+            <br>
+            <a class="d-block small" href="/forgotpassword">Forgot Password?</a>
           </div>
-          
         </div>
-        
       </div>
     </div>
-  </div>
-
-  
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
   </body>
 </html>

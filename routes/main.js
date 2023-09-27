@@ -9,23 +9,11 @@ router.get('/login', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    res.render('pages/login');
+    res.render('pages/forgotpassword');
 });
 
-router.post('/changepassword', (req, res) => {
-    res.render('pages/changepassword');
-});
-
-router.post('/trangchu', (req, res) => {
-    res.render('pages/banhang.hbs', {layout: 'layouts/main.hbs'});
-})
-
-router.get('/banhang', (req, res) => {
-    res.render('pages/banhang.hbs', {layout: 'layouts/main.hbs'});
-})
-
-router.get('/thongtinkhachhang', (req, res) => {
-    res.render('pages/thongtinkhachhang.hbs', {layout: 'layouts/main.hbs'})
+router.get('/404', (req, res) => {
+    res.render('pages/404.hbs', {layout: 'layouts/main.hbs'});
 })
 
 module.exports = router;

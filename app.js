@@ -12,10 +12,6 @@ app.use('css', express.static(path.join(__dirname, '/public/css')));
 app.use('img', express.static(path.join(__dirname, '/public/img')));
 app.use('js', express.static(path.join(__dirname, '/public/js')));
 app.use('fonts', express.static(path.join(__dirname, '/public/fonts')));
-app.use('scss', express.static(path.join(__dirname, '/public/scss')));
-app.use('sass', express.static(path.join(__dirname, '/public/sass')));
-app.use('plugins', express.static(path.join(__dirname, '/public/plugins')));
-
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/views'))
@@ -30,8 +26,19 @@ app.use('/', require('./routes/main'));
 app.use('/login', require('./routes/main'));
 
 
-app.use('/404', require('./routes/main'))
+app.use('/404', require('./routes/main'));
 
+app.use('/forgotpassword', require('./routes/main'));
+
+app.use('/home', require('./routes/main'));
+
+app.use('/salescount', require('./routes/main'));
+
+app.use('/topselling', require('./routes/main'));
+
+app.use('/shortitem', require('./routes/main'));
+
+app.use('/improvements', require('./routes/main'))
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

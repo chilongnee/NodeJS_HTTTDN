@@ -8,9 +8,29 @@ router.get('/login', (req, res) => {
     res.render('pages/login');
 });
 
-router.post('/login', (req, res) => {
+router.get('/forgotpassword', (req, res) => {
     res.render('pages/forgotpassword');
-});
+})
+
+router.get('/home', (req, res) => {
+    res.render('pages/home', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/salescount', (req, res) => {
+    res.render('pages/salescount', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/topselling', (req, res) => {
+    res.render('pages/topselling', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/shortitems', (req, res) => {
+    res.render('pages/shortitem', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/improvements', (req, res) => {
+    res.render('pages/improvements', {layout: 'layouts/main.hbs'});
+})
 
 router.get('/404', (req, res) => {
     res.render('pages/404.hbs', {layout: 'layouts/main.hbs'});

@@ -44,6 +44,9 @@ app.use('/retaildashboard', require('./routes/main'));
 
 app.use('/employeesmanage', require('./routes/main'));
 
+app.use('/POS', require('./routes/main'));
+
+app.use('/inforcustomer', require('./routes/main'));
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

@@ -43,4 +43,12 @@ router.get('/retaildashboard', (req, res) => {
 router.get('/employeesmanage', (req, res) => {
     res.render('pages/employeesmanage', {layout: 'layouts/main.hbs'});
 })
+
+router.get('/POS', (req, res) => {
+    res.render('pages/POS', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/inforcustomer', (req, res) => {
+    res.render('pages/inforcustomer', {layout: 'layouts/main.hbs'});
+})
 module.exports = router;

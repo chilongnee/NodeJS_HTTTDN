@@ -1,0 +1,351 @@
+<div class="container-fluid">
+  <!-- Breadcrumbs -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/home">Home</a>
+    </li>
+    <li class="breadcrumb-item active">POS</li>
+  </ol>
+  <!-- Page Content -->
+
+
+  <div class="container">
+
+    <h1>Product Showcase</h1>
+
+    <!-- Product Showcase -->
+
+<div class="row">
+      <div class="col-md-8">
+            <div class="search-container">
+      <input type="text" id="product-search" placeholder="Search products">
+      <button type="button" id="search-button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="card mb-3">
+              <img src="images/ip15.png" class="card-img-top " alt="Product 1 Image">
+              <div class="card-body">
+                <h5 class="card-title">Product 1</h5>
+                <p class="card-text">Price: 10 $</p>
+                <button class="btn btn-primary add-to-cart" data-product="Product 1" data-price="10" data-image="images/ip15.png"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="card mb-3">
+              <img src="images/ip15.png" class="card-img-top " alt="Product 2 Image">
+              <div class="card-body">
+                <h5 class="card-title">Product 2</h5>
+    <p class="card-text">Price: 10 $</p>
+                <button class="btn btn-primary add-to-cart" data-product="Product 1" data-price="10" data-image="images/ip15.png"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="card mb-3">
+              <img src="images/ip15.png" class="card-img-top " alt="Product 3 Image">
+              <div class="card-body">
+                <h5 class="card-title">Product 3</h5>
+                <p class="card-text">Price: 10 $</p>
+                <button class="btn btn-primary add-to-cart" data-product="Product 3" data-price="10" data-image="images/ip15.png"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+        <div class="product-card">
+            <div class="card mb-3">
+              <img src="images/ip15.png" class="card-img-top " alt="Product 4 Image">
+              <div class="card-body">
+                <h5 class="card-title">Product 4</h5>
+                <p class="card-text">Price: 10 $</p>
+                <button class="btn btn-primary add-to-cart" data-product="Product 4" data-price="10" data-image="images/ip15.png"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="card mb-3">
+              <img src="images/ip15.png" class="card-img-top " alt="Product 5 Image">
+              <div class="card-body">
+                <h5 class="card-title">Product 5</h5>
+                <p class="card-text">Price: 10 $</p>
+                <button class="btn btn-primary add-to-cart" data-product="Product 5" data-price="10" data-image="images/ip15.png"><i class="fas fa-shopping-cart"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Add more products here -->
+        </div>
+
+        <!-- Pagination -->
+         <nav>
+          <ul class="pagination">
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <!-- Add more page links as needed -->
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Cart -->
+      <div class="col-md-4">
+        <h3>Cart</h3>
+        <div id="cart-items">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <br>
+
+          <br>
+          <h5>Total Price: <span id="total-price">0</span></h5>
+          <br>
+         <div class="row">
+  <div class="col-md-6">
+    <button class="btn btn-danger btn-lg btn-rectangular clear" id="clear-cart"><i class="fa-solid fa-circle-xmark"></i></button>
+  </div>
+  <div class="col-md-6">
+
+<button onclick="window.location.href='/inforcustomer'" class="btn btn-success btn-lg btn-rectangular" id="btnok">
+  <i class="fa-solid fa-bag-shopping"></i>
+</button>  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS and your custom JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+
+    // Clear Cart button click event
+ 
+    
+     document.addEventListener("DOMContentLoaded", function() {
+    const productsPerPage = 3;
+    const productGrid = document.querySelector(".product-grid");
+    const pagination = document.querySelector(".pagination");
+    const products = document.querySelectorAll(".product-card");
+
+    // Function to show the specified page
+
+    
+function showPage(pageNumber) {
+
+  const startIndex = (pageNumber - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+
+
+      products.forEach(function(product) {
+        product.style.display = "none";
+      });
+
+  // Show the products on the current page
+  for (let i = startIndex; i < endIndex && i < products.length; i++) {
+    products[i].style.display = "block";
+  }
+}
+    // Function to handle pagination click events
+    function handlePaginationClick(event) {
+      event.preventDefault();
+      const pageNumber = parseInt(event.target.textContent);
+      showPage(pageNumber);
+    }
+    
+    // Calculate and display pagination links
+    function calculatePagination() {
+      const pageCount = Math.ceil(products.length / productsPerPage);
+      pagination.innerHTML = "";
+
+      // Create and append pagination links
+      for (let i = 1; i <= pageCount; i++) {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.textContent = i;
+        link.href = "#";
+        link.classList.add("page-link");
+        li.classList.add("page-item");
+
+        link.addEventListener("click", handlePaginationClick);
+        li.appendChild(link);
+    
+        pagination.appendChild(li);
+      }
+    }
+
+    // Show the first page by default
+    showPage(1);
+    
+    // Calculate and display pagination links
+    calculatePagination();
+    
+  });
+
+    $(document).ready(function () {
+      // Array to store cart items
+      var cartItems = [];
+
+      // Add to Cart button click event
+      $('.add-to-cart').click(function () {
+        var image = $(this).data('image');
+        var product = $(this).data('product');
+        var price = $(this).data('price');
+
+        // Check if the product is already in the cart
+        var index = cartItems.findIndex(function (item) {
+          return item.product === product;
+        });
+
+        if (index !== -1) {
+          // Product already exists in the cart, update the quantity
+          cartItems[index].quantity++;
+        } else {
+          // Product does not exist in the cart, add it
+          cartItems.push({
+            image: image,
+            product: product,
+            quantity: 1,
+            price: price
+          });
+        }
+
+        // Update the cart table
+        updateCart();
+
+        // Calculate and update the total price
+        calculateTotalPrice();
+      });
+
+      // Function to update the cart table
+      function updateCart() {
+        var cartTable = $('#cart-items tbody');
+        cartTable.empty();
+
+        for (var i = 0; i < cartItems.length; i++) {
+          var item = cartItems[i];
+
+          var row = $('<tr>');
+          row.append($('<td><img src="' + item.image + '"></td>'));
+          row.append($('<td>' + item.product + '</td>'));
+          row.append($('<td>' + item.quantity + '</td>'));
+          row.append($('<td>' + item.price + '</td>'));
+          row.append($('<td><button class="btn btn-danger remove-from-cart" data-product="' + item.product + '"><i class="fas fa-trash"></i></button></td>'));
+
+          cartTable.append(row);
+        }
+      }
+// Clear Cart button click event
+$('#clear-cart').click(function () {
+  // Clear the cartItems array
+  cartItems = [];
+
+  // Update the cart table
+  updateCart();
+
+  // Calculate and update the total price
+  calculateTotalPrice();
+});
+      // Function to calculate and update the total price
+      function calculateTotalPrice() {
+        var totalPrice = 0;
+
+        for (var i = 0; i < cartItems.length; i++) {
+          var item = cartItems[i];
+          totalPrice += item.quantity * item.price;
+        }
+
+        $('#total-price').text(totalPrice);
+      }
+
+      // Remove from Cart button click event
+      $(document).on('click', '.remove-from-cart', function () {
+        var product = $(this).data('product');
+
+        // Remove the product from the cartItems array
+        cartItems = cartItems.filter(function (item) {
+          return item.product !== product;
+        });
+
+        // Update the cart table
+        updateCart();
+
+        // Calculate and update the total price
+        calculateTotalPrice();
+      });
+    });
+
+    // Get the search input element and search button
+// Get the search input element and search button
+
+// Add event listener to the search input
+var searchbutton = document.getElementById('search-button');
+var searchInput = document.getElementById('product-search');
+searchbutton.addEventListener("click", function() {
+  if (searchInput.value === "") {
+    window.location.href = "/POS";
+  } else {
+    searchProducts();
+  }
+});
+
+function searchProducts() {
+  // Get the search query
+  var searchTerm = searchInput.value.toLowerCase();
+
+  // Get all the product cards
+  var productCards = document.getElementsByClassName('product-card');
+
+  // Get the pagination element
+  var pagination = document.getElementsByClassName('pagination')[0];
+
+  // Define the number of items per page
+  var itemsPerPage = 3;
+
+  // Create an array to store the indices of matching product cards
+  var matchingIndices = [];
+
+  // Loop through each product card
+  for (var i = 0; i < productCards.length; i++) {
+    var productCard = productCards[i];
+    var productName = productCard.querySelector('.card-title').textContent.toLowerCase();
+    var productDes = productCard.querySelector('.card-text').textContent.toLowerCase();
+
+    // Check if the product name matches the search query
+    if (productName.includes(searchTerm) || productDes.includes(searchTerm)) {
+      // Show the product card
+      productCard.style.display = 'block';
+      // Add the index to the matching indices array
+      matchingIndices.push(i);
+    } else {
+      // Hide the product card
+      productCard.style.display = 'none';
+    }
+  }
+
+  // Calculate the total number of pages based on the matching indices and items per page
+  var totalPages = Math.ceil(matchingIndices.length / itemsPerPage);
+
+  // Hide the pagination element if search term is not empty
+  if (searchTerm !== '') {
+    pagination.style.display = 'none';
+  } 
+}
+  </script>
+</div>

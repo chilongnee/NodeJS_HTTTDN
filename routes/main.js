@@ -54,4 +54,15 @@ router.get('/inforcustomer', (req, res) => {
 router.get('/invoice', (req, res) => {
     res.render('pages/invoice', {layout: 'layouts/main.hbs'});
 })
+
+router.get('/history', (req, res) => {
+    res.render('pages/history', {layout: 'layouts/main.hbs'});
+})
+
+router.get('/infoemployee', (req, res) => {
+    res.render('pages/forminfo', {layout: 'layouts/main.hbs'});
+})
+router.get('/employeemanage', (req, res) => {
+    res.render('pages/employeemanage', {layout: 'layouts/main.hbs'});
+})
 module.exports = router;

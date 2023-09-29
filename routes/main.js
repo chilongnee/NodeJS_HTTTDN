@@ -51,4 +51,7 @@ router.get('/POS', (req, res) => {
 router.get('/inforcustomer', (req, res) => {
     res.render('pages/inforcustomer', {layout: 'layouts/main.hbs'});
 })
+router.get('/invoice', (req, res) => {
+    res.render('pages/invoice', {layout: 'layouts/main.hbs'});
+})
 module.exports = router;

@@ -1,106 +1,143 @@
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/jsbarcode.min.js"></script>
 <style>
-    
-</style>
-<header class="top-bar align-center">
-  <div class="top-bar-title">
-    <h1>Invoice Template <small>with Foundation Flex-Grid Layout</small></h1>
-  </div>
-</header>
-<div class="row expanded">
-  <main class="columns">
-    <div class="inner-container">
-    <header class="row align-center">
-        <a class="button hollow secondary"><i class="ion ion-chevron-left"></i> Go Back to Purchases</a>
-        &nbsp;&nbsp;<a class="button"><i class="ion ion-ios-printer-outline"></i> Print Invoice</a>
-      </header>
-    <section class="row">
-      <div class="callout large invoice-container">
-        <table class="invoice">
-          <tr class="header">
-            <td class="">
-              <img src="http://www.travelerie.com/wp-content/uploads/2014/04/PlaceholderLogoBlue.jpg" alt="Company Name" />
-            </td>
-            <td class="align-right">
-              <h2>Invoice</h2>
-            </td>
-          </tr>
-          <tr class="intro">
-            <td class="">
-              Hello, Philip Brooks.<br>
-              Thank you for your order.
-            </td>
-            <td class="text-right">
-              <span class="num">Order #00302</span><br>
-              October 18, 2017
-            </td>
-          </tr>
-          <tr class="details">
-            <td colspan="2">
-              <table>
-                <thead>
-                  <tr>
-                    <th class="desc">Item Description</th>
-                    <th class="id">Item ID</th>
-                    <th class="qty">Quantity</th>
-                    <th class="amt">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="item">
-                    <td class="desc">Name or Description of item</td>
-                    <td class="id num">MH792AM</td>
-                    <td class="qty">1</td>
-                    <td class="amt">$100.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td> 
-          </tr>
-          <tr class="totals">
-            <td></td>
-            <td>
-              <table>
-                <tr class="subtotal">
-                  <td class="num">Subtotal</td>
-                  <td class="num">$100.00</td>
-                </tr>
-                <tr class="fees">
-                  <td class="num">Shipping & Handling</td>
-                  <td class="num">$0.00</td>
-                </tr>
-                <tr class="tax">
-                  <td class="num">Tax (7%)</td>
-                  <td class="num">$7.00</td>
-                </tr>
-                <tr class="total">
-                  <td>Total</td>
-                  <td>$107.00</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        
-        <section class="additional-info">
-        <div class="row">
-          <div class="columns">
-            <h5>Billing Information</h5>
-            <p>Philip Brooks<br>
-              134 Madison Ave.<br>
-              New York NY 00102<br>
-              United States</p>
-          </div>
-          <div class="columns">
-            <h5>Payment Information</h5>
-            <p>Credit Card<br>
-              Card Type: Visa<br>
-              &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 1234
-              </p>
-          </div>
-        </div>
-        </section>
-      </div>
-    </section>
-    </div>
-  </main>
+    @media print {
+      /* Hide the sidebar when printing */
+      .sidebar {
+        display: none;
+      }
+      .breadcrumb{
+        display: none;
+      }
+    }
+    .barcode{
+      font-family: 'Libre Barcode 39';font-size: 40px;
+    }
+  </style>
+          <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/home">Home</a>
+              </li>
+              <li class="breadcrumb-item active">Improvements</li>
+            </ol>
+<div class="container bootdey">
+<div class="container">
+<div class="row">
+    				<!-- BEGIN INVOICE -->
+					<div class="col-xs-12">
+						<div class="grid invoice">
+							<div class="grid-body">
+								<div class="invoice-title">
+									<div class="row">
+										<div class="col-xs-12">
+											<img src="http://vergo-kertas.herokuapp.com/assets/img/logo.png" alt="" height="35">
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-md-6">
+											<h2><i class="fa-solid fa-file-invoice-dollar" style="padding-right: 30px;"></i><b>INVOICE</b><br><br>
+											<span class="small">ORDER #1082</span></h2>
+                      <p class="barcode">1082</p>
+                      <script>
+                  // Generate the barcode
+                  JsBarcode("#barcode", "ORDER #1082");
+                </script>
+										</div>
+                    <div class="col-md-6 text-right">
+											 <span class="pull-right hidden-print">
+                        <a href="javascript:;" class="btn btn-sm btn-white m-b-10 p-l-5"><i class="fa fa-file t-plus-1 text-danger fa-fw fa-lg"></i> Export as PDF</a>
+                        <a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-white m-b-10 p-l-5"><i class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print</a>
+                        </span>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-md-6">
+										<address>
+											<strong>Store information:</strong><br>
+											Twitter, Inc.<br>
+											795 Folsom Ave, Suite 600<br>
+											San Francisco, CA 94107<br>
+											<abbr title="Phone">P:</abbr> (123) 456-7890
+										</address>
+									</div>
+									<div class="col-md-6 text-right">
+										<address>
+											<strong>Customer information:</strong><br>
+											Elaine Hernandez<br>
+											P. Sherman 42,<br>
+											Wallaby Way, Sidney<br>
+											<abbr title="Phone">P:</abbr> (123) 345-6789
+										</address>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<address>
+											<strong>Payment Method:</strong><br>
+											Visa ending **** 1234<br>
+											h.elaine@gmail.com<br>
+										</address>
+									</div>
+									<div class="col-md-6 text-right">
+										<address>
+											<strong>Order Date:</strong><br>
+											17/06/14
+										</address>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<h3>ORDER SUMMARY</h3>
+										<table class="table table-striped">
+											<thead>
+												<tr style="background-color: rgb(10, 167, 10);" class="line">
+													<td><strong>#</strong></td>
+                          <td class="text-center"><strong>Name</strong></td>
+													<td class="text-center"><strong>DESCRIPTION</strong></td>
+													<td class="text-center"><strong>HRS</strong></td>
+													<td class="text-right"><strong>SUBTOTAL</strong></td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td><strong>Iphone 15</strong></td>
+                          <td style="width: 700px;">Color: Pink, Capcity: 1T</td>
+													<td class="text-center">15</td>
+													<td class="text-right">$1,125.00</td>
+												</tr>
+												
+												<tr style="color: blue;">
+													<td colspan="3"></td>
+													<td class="text-right"><strong>Taxes</strong></td>
+													<td class="text-right"><strong>N/A</strong></td>
+												</tr>
+												<tr style="color: red;">
+													<td colspan="3" >
+													</td ><td class="text-right" ><strong>Total</strong></td>
+													<td class="text-right"><strong>$2,400.00</strong></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>									
+								</div>
+								<div class="row">
+									<div class="col-md-12 text-right identity">
+										<p>Designer identity<br><strong>Jeffrey Williams</strong></p>
+                    <button type="button" class="btn btn-success" onclick="window.location.href = '/POS';">See Orders   <i class="fa-solid fa-list"></i></i></button>          
+                    
+                    <button type="button" class="btn btn-success" onclick="window.location.href = '/POS';">Continue  <i class="fa-solid fa-circle-chevron-right"></i></button>          
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END INVOICE -->
+				</div>
+</div>
 </div>

@@ -4819,14 +4819,16 @@
 			'class':         classes.sLengthSelect
 		} );
 
-		for ( var i=0, ien=lengths.length ; i<ien ; i++ ) {
-			select[0][ i ] = new Option(
-				typeof language[i] === 'number' ?
-					settings.fnFormatNumber( language[i] ) :
-					language[i],
-				lengths[i]
+		
+		for (var i = 0, ien = lengths.length; i < ien; i++) {
+			var displayValue = lengths[i];
+			var realValue = displayValue / 5;
+			select[0][i] = new Option(
+			  language[i],
+			  realValue
 			);
-		}
+			$(select[0][i]).attr('data-display-value', displayValue);
+		  }
 
 		var div = $('<div><label/></div>').addClass( classes.sLength );
 		if ( ! settings.aanFeatures.l ) {
@@ -11182,7 +11184,7 @@
 		 * feature enabled (`lengthChange`) then the end user will be able to override
 		 * this to a custom setting using a pop-up menu.
 		 *  @type int
-		 *  @default 10
+		 *  @default 2
 		 *
 		 *  @dtopt Options
 		 *  @name DataTable.defaults.pageLength
@@ -11194,7 +11196,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 10,
+		"iDisplayLength": 2,
 
 
 		/**
@@ -11466,7 +11468,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+		
 
 
 			/**
@@ -11474,6 +11476,7 @@
 			 * format of this string should match `info`.
 			 *  @type string
 			 *  @default Showing 0 to 0 of 0 entries
+			 * 
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.infoEmpty
@@ -11487,7 +11490,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			
 
 
 			/**
@@ -11627,7 +11630,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Show entries _MENU_",
 
 
 			/**

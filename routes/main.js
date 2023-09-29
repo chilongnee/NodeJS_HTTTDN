@@ -60,7 +60,7 @@ router.get('/history', (req, res) => {
 })
 
 router.get('/infoemployee', (req, res) => {
-    res.render('pages/forminfo', {layout: 'layouts/main.hbs'});
+    res.render('pages/infoemployee', {layout: 'layouts/main.hbs'});
 })
 router.get('/employeemanage', (req, res) => {
     res.render('pages/employeemanage', {layout: 'layouts/main.hbs'});

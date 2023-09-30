@@ -4822,7 +4822,7 @@
 		
 		for (var i = 0, ien = lengths.length; i < ien; i++) {
 			var displayValue = lengths[i];
-			var realValue = displayValue / 5;
+			var realValue = displayValue / 6;
 			select[0][i] = new Option(
 			  language[i],
 			  realValue
@@ -10192,7 +10192,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 10, 25, 50, 100 ],
+		"aLengthMenu": [ 12, 24, 48, 106 ],
 
 
 		/**

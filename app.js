@@ -50,11 +50,24 @@ app.use('/inforcustomer', require('./routes/main'));
 
 app.use('/invoice', require('./routes/main'));
 
-app.use('/history', require('./routes/main'));
+app.use('/listorder', require('./routes/main'));
+
+app.use('/listbrand', require('./routes/main'));
+
+app.use('/listtype', require('./routes/main'));
 
 app.use('/infoemployee', require('./routes/main'));
 
-app.use('/employeemanage', require('./routes/main'));
+app.use('/employeesmanage', require('./routes/main'));
+
+app.use('/resetpassword', require('./routes/main'));
+
+app.use('/orderdetail', require('./routes/main'));
+
+app.use('/customersmanage', require('./routes/main'));
+
+app.use('/listcolor', require('./routes/main'));
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });

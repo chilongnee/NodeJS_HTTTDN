@@ -1,0 +1,96 @@
+<style>
+    .dataTables_info {
+    display: none;
+    }
+</style>
+<div class="container-fluid">
+  <!-- Breadcrumbs -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/home">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Quản lý nhãn hàng</li>
+  </ol>
+
+  <!-- Page Content -->
+  <!-- DataTables Example -->
+  <div class="card mb-3">
+    <div class="card-header bg-primary text-white">
+      <i class="fa fa-table"></i>
+      Danh sách nhãn hàng
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+                <th>Mã nhãn hàng</th>
+                <th>Tên nhãn hàng</th>
+                <th>Số điện thoại nhãn hàng</th>
+                <th>Địa chỉ nhãn hàng</th>
+                <th>Tổng sản phẩm</th>
+                <th>Tổng sản phẩm đã bán</th>
+                <th> Tổng sản phẩm tồn kho</th>
+                <th>Số chi tiêu</th>
+                <th>Số doanh thu</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+                <th>Mã nhãn hàng</th>
+                <th>Tên nhãn hàng</th>
+                <th>Số điện thoại nhãn hàng</th>
+                <th>Địa chỉ nhãn hàng</th>
+                <th>Tổng sản phẩm</th>
+                <th>Tổng sản phẩm đã bán</th>
+                <th> Tổng sản phẩm tồn kho</th>
+                <th>Số chi tiêu</th>
+                <th>Số doanh thu</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+                <td>Mã nhãn hàng</td>
+                <td>Tên nhãn hàng</td>
+                <td>Số điện thoại nhãn hàng</td>
+                <td>Địa chỉ nhãn hàng</td>
+                <td>Tổng sản phẩm</td>
+                <td>Tổng sản phẩm đã bán</td>
+                <td>Tổng sản phẩm tồn kho</td>
+                <td>Số chi tiêu</td>
+                <td>Số doanh thu</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+  <br><br><br>
+
+  <script>
+    // Get all the rows in the table body
+    const tableBody = document.querySelector("#dataTable tbody");
+    const rows = tableBody.querySelectorAll("tr");
+
+    // Iterate over each row and calculate the total salary
+    rows.forEach((row) => {
+      // Get the cells containing the original salary and forfeit values
+      const originalSalaryCell = row.querySelector("td:nth-child(7)");
+      const forfeitCell = row.querySelector("td:nth-child(8)");
+
+      // Parse the salary values (remove the $ sign and convert to a number)
+      const originalSalary = parseFloat(originalSalaryCell.textContent.replace("$", ""));
+      const forfeit = parseFloat(forfeitCell.textContent.replace("$", ""));
+
+      // Calculate the total salary
+      const totalSalary = originalSalary - forfeit;
+
+      // Update the total salary cell with the calculated value
+      const totalSalaryCell = row.querySelector("td:nth-child(9)");
+      totalSalaryCell.textContent = totalSalary.toFixed(2) + "$";
+    });
+  </script>
+</div>

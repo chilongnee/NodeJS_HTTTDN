@@ -1,10 +1,15 @@
+<style>
+    .dataTables_info {
+    display: none;
+    }
+</style>
 <div class="container-fluid">
   <!-- Breadcrumbs -->
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="/home">Home</a>
     </li>
-    <li class="breadcrumb-item active">Product Vendors</li>
+    <li class="breadcrumb-item active">Quản lý nhân viên</li>
   </ol>
 
   <!-- Page Content -->
@@ -12,11 +17,11 @@
   <div class="card mb-3">
     <div class="card-header bg-primary text-white">
       <i class="fa fa-table"></i>
-      Product Vendors
+      Danh sách nhân viên
       <a href="#" class="text-white" data-toggle="modal" data-target="#addProductVendorModal">
         <span class="float-right">
           <i class="fa fa-plus"></i>
-          Add New Vendor
+          Thêm nhân viên mới
         </span>
       </a>
     </div>
@@ -25,30 +30,41 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Vendor ID</th>
-              <th>Vendor Name</th>
-              <th>Phone</th>
-              <th>Total Amount Products</th>
-              <th>Absent day</th>
-              <th>Late (hour)</th>
-              <th>Original salary</th>
-              <th>Forfeit</th>
-              <th>Total salary</th>
-              <th>Action</th>
+              <th>Mã nhân viên</th>
+              <th>Tên nhân viên</th>
+              <th>Số điện thoại</th>
+              <th>Email</th>
+              <th>Ngày sinh</th>
+              <th>Giới tính</th>
+              <th>Tổng tiền bán được</th>
+              <th>Số ngày nghỉ</th>
+              <th>Số giờ trễ</th>
+              <th>Lương cứng</th>
+              <th>Tiền phạt</th>
+              <th>Tổng lương</th>
+              <Th>Trạng thái tài khoản</Th>
+              <th>Tên đăng nhập</th>
+              <th>Mật khẩu (đã mã hóa)</th>
+              <th></th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>Vendor ID</th>
-              <th>Vendor Name</th>
-              <th>Phone</th>
-              <th>Total Amount Products</th>
-              <th>Absent day</th>
-              <th>Late (hour)</th>
-              <th>Original salary</th>
-              <th>Forfeit</th>
-              <th>Total salary</th>
-              <th>Action</th>
+              <th>Mã nhân viên</th>
+              <th>Tên nhân viên</th>
+              <th>Số điện thoại</th>
+              <th>Email</th>
+              <th>Ngày sinh</th>
+              <th>Giới tính</th>
+              <th>Tổng tiền bán được</th>
+              <th>Số ngày nghỉ</th>
+              <th>Số giờ trễ</th>
+              <th>Lương cứng</th>
+              <th>Tiền phạt</th>
+              <th>Tổng lương</th>
+              <Th>Trạng thái tài khoản</Th>
+              <th>Tên đăng nhập</th>
+              <th>Mật khẩu (đã mã hóa)</th>
             </tr>
           </tfoot>
           <tbody>
@@ -61,22 +77,16 @@
               <td>0</td>
               <td>1000$</td>
               <td>100$</td>
-              <td></td>
-              <td><button class="btn btn-danger"><i class="fas fa-trash"></button></i></td>
-            </tr>
-            <tr>
-              <td>01 <a href="/infoemployee" style="text-decoration: underline;">See detail</a></td>
-              <td>Aness Ahmad</td>
-              <td>555-555-555</td>
-              <td>21</td>
-              <td>2</td>
-              <td>0</td>
-              <td>1000$</td>
+              <td>100$</td>
+              <td>100$</td>
+              <td>100$</td>
+              <td>100$</td>
+              <td>100$</td>
               <td>100$</td>
               <td></td>
               <td><button class="btn btn-danger"><i class="fas fa-trash"></button></i></td>
-              
             </tr>
+
             <!-- Add more rows as needed -->
           </tbody>
         </table>

@@ -12,6 +12,10 @@ router.get('/forgotpassword', (req, res) => {
     res.render('pages/forgotpassword');
 })
 
+router.get('/resetpassword', (req, res) => {
+    res.render('pages/resetpassword');
+})
+
 router.get('/home', (req, res) => {
     res.render('pages/home', {layout: 'layouts/main.hbs'});
 })
@@ -55,14 +59,28 @@ router.get('/invoice', (req, res) => {
     res.render('pages/invoice', {layout: 'layouts/main.hbs'});
 })
 
-router.get('/history', (req, res) => {
-    res.render('pages/history', {layout: 'layouts/main.hbs'});
+router.get('/listorder', (req, res) => {
+    res.render('pages/listorder', {layout: 'layouts/main.hbs'});
 })
-
+router.get('/listbrand', (req, res) => {
+    res.render('pages/listbrand', {layout: 'layouts/main.hbs'});
+})
+router.get('/listtype', (req, res) => {
+    res.render('pages/listtype', {layout: 'layouts/main.hbs'});
+})
+router.get('/listcolor', (req, res) => {
+    res.render('pages/listcolor', {layout: 'layouts/main.hbs'});
+})
 router.get('/infoemployee', (req, res) => {
     res.render('pages/infoemployee', {layout: 'layouts/main.hbs'});
 })
-router.get('/employeemanage', (req, res) => {
-    res.render('pages/employeemanage', {layout: 'layouts/main.hbs'});
+router.get('/employeesmanage', (req, res) => {
+    res.render('pages/employeesmanage', {layout: 'layouts/main.hbs'});
+})
+router.get('/orderdetail', (req, res) => {
+    res.render('pages/orderdetail', {layout: 'layouts/main.hbs'});
+})
+router.get('/customersmanage', (req, res) => {
+    res.render('pages/customersmanage', {layout: 'layouts/main.hbs'});
 })
 module.exports = router;
